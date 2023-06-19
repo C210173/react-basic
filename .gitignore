@@ -21,3 +21,15 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# File ẩn và thư mục do Mac OS tạo ra
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# File ẩn do IDE Visual Studio Code tạo ra
+.vscode/
+
+# File ẩn do hệ điều hành macOS tạo ra
+Icon?
+
