@@ -14,7 +14,12 @@ class MyComponent extends React.Component {
 
      handleOnChangeName = (event) => {
         this.setState({ name: event.target.value });
-     }
+    }
+
+    handleClickButton = () => {
+        console.log('his the bitton');
+        alert('click me');
+    };
 
     render() {
         return (
@@ -25,6 +30,9 @@ class MyComponent extends React.Component {
                 </div>
                 <div className='second'>
                    Chào mừng đến với channel: {this.state.channel}
+                </div>
+                <div className='third'>
+                    <button onClick={() => this.handleClickButton()}>Click me</button>
                 </div>
             </>
         )
