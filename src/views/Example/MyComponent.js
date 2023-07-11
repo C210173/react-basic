@@ -14,22 +14,36 @@ class MyComponent extends React.Component {
 
   addNewJob = (job) => {
     console.log("check job from parent: ", job);
-    // let curentJobs = this.state.arrJobs;
-    // curentJobs.push(job);
+    // let currentJobs = this.state.arrJobs;
+    // currentJobs.push(job);
 
     this.setState({
       arrJobs: [...this.state.arrJobs, job],
-      //   arrJobs: curentJobs,
+      //   arrJobs: currentJobs,
     });
   };
 
   deleteJob = (job) => {
-    let curentJobs = this.state.arrJobs;
-    curentJobs = curentJobs.filter((item) => item.id !== job.id);
+    let currentJobs = this.state.arrJobs;
+    currentJobs = currentJobs.filter((item) => item.id !== job.id);
     this.setState({
-      arrJobs: curentJobs,
+      arrJobs: currentJobs,
     });
   };
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log(
+      ">>>> run did update",
+      "prevState",
+      prevState,
+      "current state",
+      this.state
+    );
+  }
+
+  componentDidMount() {
+    console.log(">>>run component Did Mount");
+  }
 
   /*
     JSX => return block
