@@ -16,7 +16,7 @@ class ListTodo extends React.Component {
     this.setState({
       ListTodos: [...this.state.ListTodos, todo],
     });
-    toast.error("Wow so easy!");
+    toast.success("Wow so easy!");
   };
   render() {
     let { ListTodos } = this.state;
