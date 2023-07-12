@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router";
 import Color from "../HOC/Color";
+import image from "../../assets/images/fort.jpg";
 
 class Home extends React.Component {
   componentDidMount() {
@@ -11,7 +12,14 @@ class Home extends React.Component {
   //HOC: higher order component
   render() {
     console.log(this.props);
-    return <div>hello world from homepage with Hao</div>;
+    return (
+      <>
+        <div>hello world from homepage with Hao</div>
+        <div>
+          <img src={image} />
+        </div>
+      </>
+    );
   }
 }
 
