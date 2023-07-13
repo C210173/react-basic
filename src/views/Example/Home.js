@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router";
 import Color from "../HOC/Color";
 import image from "../../assets/images/fort.jpg";
+import { connect } from "react-redux";
 
 class Home extends React.Component {
   componentDidMount() {
@@ -11,7 +12,7 @@ class Home extends React.Component {
   }
   //HOC: higher order component
   render() {
-    console.log(this.props);
+    console.log("check props", this.props.dataRedux);
     return (
       <>
         <div>hello world from homepage with Hao</div>
@@ -23,5 +24,11 @@ class Home extends React.Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    dataRedux: state.users,
+  };
+};
+
 // export default withRouter(Home);
-export default Color(Home);
+export default connect(mapStateToProps)(Color(Home));
