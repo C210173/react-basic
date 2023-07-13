@@ -7,7 +7,10 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import rootReducer from "./store/reducers/rootReducer";
 
-const reduxStore = createStore(rootReducer);
+const reduxStore = createStore(
+  rootReducer,
+  window._REDUX_DEVTOOLS_EXTENSION_ && window._REDUX_DEVTOOLS_EXTENSION_()
+);
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={reduxStore}>
